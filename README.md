@@ -1,70 +1,26 @@
-<<<<<<< HEAD
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+### Laboratorul nr. 2: Cereri HTTP și șablonare în Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Am dezvoltat o aplicație numită "To-Do App" pentru gestionarea sarcinilor, folosind conceptele fundamentale ale cererilor HTTP în Laravel și sistemul de șabloane Blade.
 
-## About Laravel
+### Întrebări de verificare
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. **Ce este un controller de resurse în Laravel și ce rute generează?**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+   - În Laravel, un controller de resurse este un tip specializat de controller care oferă o abordare standardizată pentru operațiile de tip CRUD. Acesta generează rute pentru fiecare dintre metodele: index, create, store, show, edit, update și destroy.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+2. **Care sunt diferențele dintre definirea manuală a rutelor și utilizarea unui controller de resurse?**
 
-## Learning Laravel
+   - Ambele metode au atât avantaje, cât și dezavantaje, iar alegerea metodei depinde de complexitatea aplicației și preferințele dezvoltatorului:
+     - Definirea manuală este potrivită pentru cazurile în care anumite rute necesită funcționalități specifice, cum ar fi prefixe diferite sau URL-uri personalizate.
+     - Utilizarea unui controller de resurse permite generarea automată a tuturor rutelor CRUD cu o structură și URL-uri standardizate.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+3. **Ce beneficii aduc componentele anonime Blade?**
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+   - Componentele anonime Blade în Laravel contribuie la modularitate și reutilizare, separând logica de prezentare și îmbunătățind consistența interfeței. Utilizând `@props`, aceste componente devin personalizabile, reducând codul duplicat și facilitând întreținerea.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+4. **Ce metode HTTP sunt utilizate pentru a realiza operațiile CRUD?**
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-=======
-# l2
->>>>>>> e4598023ffbfeb15133e2670b534becdf6d87ce1
+   - `Create`: Utilizează metoda `POST` pentru a crea o nouă resursă pe server.
+   - `Read`: Folosește metoda `GET` pentru a accesa o resursă existentă.
+   - `Update`: Se folosesc metodele `PUT` sau `PATCH` pentru a modifica o resursă existentă.
+   - `Delete`: Utilizează metoda `DELETE` pentru a elimina o resursă.
