@@ -1,18 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="create">Creează o nouă sarcină</h1>
+<form action="{{ route('tasks.store') }}" method="POST">
+    @csrf
+    <label for="title">Titlu:</label>
+    <input type="text" name="title" id="title">
+    <label for="description">Descriere:</label>
+    <textarea name="description" id="description"></textarea>
+    <label for="category_id">Categorie:</label>
+    <select name="category_id" id="category_id">
+        @foreach ($categories as $category)
+            <option value={{ $category['id'] }}>{{ $category['name'] }}</option>
+        @endforeach
+    </select>
+    <select multiple name="tags[]">
+        @foreach ($tags as $tag)
+            <option value={{ $tag['id'] }}>{{ $tag['name'] }}</option>
+        @endforeach
+    </select>
+    <button type="submit">Creează Sarcina</button>
+</form>
 
-    <div class="create-task-container">
-        <form action="{{ route('tasks.store') }}" method="POST">
-            
-            <label for="title">Titlu Sarcină:</label>
-            <input type="text" id="title" name="title">
-
-            <label for="description">Descriere:</label>
-            <textarea id="description" name="description"></textarea>
-
-            <button type="submit">Salvează Sarcina</button>
-        </form>
-    </div>
 @endsection
